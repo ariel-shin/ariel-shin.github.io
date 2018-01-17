@@ -1,1 +1,596 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<body>
+
+<!-- Top menu -->
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-center w3-padding-16">Davis Happy Hours Right Now!<br />All the Happy Hours in Davis that you can go to right now.</div>
+  </div>
+</div>
+  
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <center>
+    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=happy%20hour%20davis&key=AIzaSyBFdUXBwtroqADTwkxIe5PKJ8GJon3hWsg" allowfullscreen></iframe>
+
+  <p id="demo"></p>
+  <p id="demo2"></p>
+  </center>
+
+
+  <script>
+  function checkDay() {
+    var d = new Date();
+    if (d.getHours() < 11 && d.getHours() >= 0)
+    {
+      return "No one is having Happy Hour in Davis right now.";
+      //display list of happy hours
+    }
+    else 
+    {
+      return "Here are the Happy Hours happening right now!" 
+    }
+  }
+  document.getElementById("demo").innerHTML = checkDay();
+
+  var myObj;
+  myObj = {
+    "bars": [
+    {
+      "Name": "Test1",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 1,
+      "start-min": 0,
+      "end": 23,
+      "time": "Now"
+    },
+    {
+      "Name": "Test2",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 1,
+      "start-min": 0,
+      "end": 23,
+      "time": "Now"
+    },
+    {
+      "Name": "Applebees",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Bistro 33 Davis",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Blondies",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 16,
+      "start-min": 0,
+      "end": 19,
+      "time": "4pm - 7pm"
+    },
+    {
+      "Name": "Burgers & Brew",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "City Hall Tavern",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Davis Beer Shoppe",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 0,
+      "Sat": 0,
+      "start": 11,
+      "start-min": 0,
+      "end": 16,
+      "time": "11am - 4 pm"
+    },
+    {
+      "Name": "De Vere's Irish Pub",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Froggy's Grill",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 16,
+      "start-min": 0,
+      "end": 19,
+      "time": "4pm - 7pm"
+    },
+    {
+      "Name": "G St Wunderbar",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 16,
+      "start-min": 0,
+      "end": 19,
+      "time": "4pm - 7pm"
+    },
+    {
+      "Name": "The Graduate",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 17,
+      "time": "3pm - 5pm"
+    },
+    {
+      "Name": "Kathmandu Kitchen",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Ketmoree Thai Restaurant and Bar",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 16,
+      "start-min": 0,
+      "end": 18,
+      "time": "4pm - 6pm"
+    },
+    {
+      "Name": "Mikuni's",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 16,
+      "start-min": 30,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Open Rice Kitchen",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 11,
+      "start-min": 0,
+      "end": 24,
+      "time": "11am - 12am"
+    },
+    {
+      "Name": "Original Steve's",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 14,
+      "start-min": 0,
+      "end": 17,
+      "time": "2pm - 5 pm"
+    },
+    {
+      "Name": "Our House",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 16,
+      "start-min": 0,
+      "end": 18,
+      "time": "4pm - 6pm"
+    },
+    {
+      "Name": "Paesanos",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Red 88 Noodle Bar",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 17,
+      "start-min": 0,
+      "end": 19,
+      "time": "5pm - 7pm"
+    },
+    {
+      "Name": "Seasons",
+      "Sun": 0,
+      "Mon": 0,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 16,
+      "start-min": 0,
+      "end": 18,
+      "time": "4pm - 6pm"
+    },
+    {
+      "Name": "Taqueria El Burrito",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Tres Hermanas Davis",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Thai Canteen",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Uncle Vito's",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 16,
+      "start-min": 0,
+      "end": 18,
+      "time": "4pm - 6pm"
+    },
+    {
+      "Name": "University of Beer",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 12,
+      "start-min": 0,
+      "end": 17,
+      "time": "12pm - 5 pm"
+    },
+    {
+      "Name": "Village Pizza & Grill",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 0,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "VINI",
+      "Sun": 0,
+      "Mon": 0,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 16,
+      "start-min": 0,
+      "end": 18,
+      "time": "4pm - 6pm"
+    },
+    {
+      "Name": "Wiki Bar",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "Woodstock's Pizza Davis",
+      "Sun": 0,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 0,
+      "start": 15,
+      "start-min": 0,
+      "end": 18,
+      "time": "3pm - 6pm"
+    },
+    {
+      "Name": "3rd & U",
+      "Sun": 1,
+      "Mon": 1,
+      "Tues": 1,
+      "Wed": 1,
+      "Thurs": 1,
+      "Fri": 1,
+      "Sat": 1,
+      "start": 15,
+      "start-min": 30,
+      "end": 18,
+      "time": "3pm - 6pm"
+    }
+  ]
+  }  
+
+  var d = new Date();
+  var i, x=""; 
+  for (i in myObj.bars) {
+    if (myObj.bars[i].start <= d.getHours() && myObj.bars[i].end > d.getHours())
+    {
+      if (d.getDay() == 0)
+      {
+        if (myObj.bars[i].Sun == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+
+      if (d.getDay() == 1)
+      {
+        if (myObj.bars[i].Mon == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+
+      if (d.getDay() == 2)
+      {
+        if (myObj.bars[i].Tues == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+
+      if (d.getDay() == 3)
+      {
+        if (myObj.bars[i].Wed == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + ": " + 
+          myObj.bars[i].time +"</h2>";
+        } 
+      }
+
+      if (d.getDay() == 4)
+      {
+        if (myObj.bars[i].Thurs == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+
+      if (d.getDay() == 5)
+      {
+        if (myObj.bars[i].Fri == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+
+      if (d.getDay() == 6)
+      {
+        if (myObj.bars[i].Sat == 1)
+        {
+          x += "<h2>" + myObj.bars[i].Name + "</h2>";
+        } 
+      }
+      
+    }
+  }
+  document.getElementById("demo2").innerHTML = x;
+
+  </script>
+
+  <script>
+  $(document).ready(function(){
+      $("p").click(function(){
+          $(this).hide();
+      });
+  });
+  </script>
+
+  <!-- img IDs --> 
+
+  <!-- First Photo Grid-->
+
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin-top:50px">
+    <div class="w3-center">Personal Favorites</div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16 w3-center" id="places">
+    <div class="w3-quarter">
+      <h3>Tres Hermanas Davis</h3>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BSdGZJ1FseV/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:62.48665955176094% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BSdGZJ1FseV/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">It was a margarita night!!!</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/dogojosho/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Joshua Garrett</a> (@dogojosho) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-04-04T07:15:11+00:00">Apr 4, 2017 at 12:15am PDT</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
+    </div>
+    <div class="w3-quarter">
+      <h3>Paesanos</h3>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BYhLi46nwUs/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BYhLi46nwUs/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Yue Jia (@yuejiafoodie)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-09-02T00:25:31+00:00">Sep 1, 2017 at 5:25pm PDT</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
+    </div>
+    <div class="w3-quarter">
+      <h3>Red 88 Noodle Bar</h3>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BUDl--WgEv3/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BUDl--WgEv3/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Whoa!! $4 sake bombs all night long every Saturday @red88bar! Not a bad place to start the night in Davis! Tag a friend you&#39;d do a sake bomb with. #sakebombs #yourdavis #saturdaynight</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/your.davis/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Your Davis 🚴🏾‍♀️🍻🎭</a> (@your.davis) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-05-14T02:33:45+00:00">May 13, 2017 at 7:33pm PDT</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
+    </div>
+    <div class="w3-quarter">
+      <h3>Applebee's</h3>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BdIfp4cgj5K/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BdIfp4cgj5K/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Server: What can I get you to drink? Me: Fa-la-la-la-la, la-la-la-lager.</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/applebees/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Applebee&#39;s Grill &amp; Bar</a> (@applebees) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-12-25T16:57:12+00:00">Dec 25, 2017 at 8:57am PST</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
+    </div>
+  </div>
+
+<!-- End page content -->
+</div>
+
+</body>
+</html>
