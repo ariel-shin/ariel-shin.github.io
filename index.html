@@ -1,624 +1,150 @@
 <!DOCTYPE html>
 <html>
-<title>Happy Hours in Davis</title>
+<title>Rainy Day</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/rainyday.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
-.w3-bar-block .w3-bar-item {padding:20px}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/temp3.css">
+
+
 <body>
 
-<!-- Top menu -->
-<div class="w3-top">
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-    <div class="w3-center w3-padding-16">Davis Happy Hours Right Now!<br />All the Happy Hours in Davis that you can go to right now.</div>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+      <a href="#home" class="w3-bar-item w3-button">HOME</a>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> About</a>
+      <a href="#upload" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i>Upload</a>
+      <a href="#results" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Results</a>
+    </a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+      <a href="#login" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
+      <a href="#upload" class="w3-bar-item w3-button" onclick="toggleFunction()">Upload</a>
+      <a href="#results" class="w3-bar-item w3-button" onclick="toggleFunction()">Results</a>
+    </div>
   </div>
-</div>
-  
-<!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-  <center>
-    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=happy%20hour%20davis&key=AIzaSyBFdUXBwtroqADTwkxIe5PKJ8GJon3hWsg" allowfullscreen></iframe>
+  <!-- First Parallax Image with Logo Text -->
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+        <span class="w3-hide-small">Rainy Day</span>
+      </span>
+    </div>
+  </div>
 
-  <p id="demo"></p>
-  <p id="demo2"></p>
-  <button id="show">Show Specials</button>
-<button id="hide">Hide Specials</button>
-  </center>
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">About Us</h3>
+    <p class="w3-center"><em>Unprepared?</em></p>
+    <p class="w3-center"><em>That's okay. We're here for you. Promise.</em></p>
+    <p class="w3-center"><em>Natural disasters are really scary- we just want you to be ready.</em></p>
+    <p class="w3-center"><em>The Western Wildfires in Southern California destroyed $18 billion in property, and 54 people died.</em></p>
+    <p class="w3-center"><em>Hurricane Irma decimated $50 billion and took the lives of 97 individuals.</em></p>
+    <p class="w3-center"><em>Hurricane Harvey ruined $125 billion worth of real estate, and resulted in 89 deaths.</em></p>
+    <p class="w3-center"><em>This is why home and life insurance is so significant; however, sometimes, even insurance, something created to
+    help those affected by tragedy, might try to take advantage of them. When it comes to claims that homeowners make in order to rebuild their lives,
+    insurance companies may try to get out of replacing the items that made your household a home, especially since it'll be on their dime. </em></p>
+    <p class="w3-center"><em>That's why we want you to upload pictures of your home, and our ~magical algorithm~ will email you a .csv
+    file that you can then upload to the cloud service of your choosing.</em></p>
+    <p class="w3-center"><em>Natural disasters are always unprecedented, but we want to make sure that you can patch up your life the best you can,
+    and even commend yourself about making sure you're prepared for a rainy day.</em></p>
+    <p class="w3-center"><em> <3 The RainyDay Team <3 </em></p>
+  </div>
+
+  <!-- Second Parallax Image with Upload Text -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">Upload</span>
+    </div>
+  </div>
+
+  <!-- Container Upload Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="Upload">
+    <h3 class="w3-center"></h3>
+    <form action="/upload" class="form w3-center" method="POST" enctype="multipart/form-data">
+      <input type="file" name="uploadedImage">
+      <button class="w3-center" type="submit" value="Submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+
+  <!-- Third Parallax Image with Results Text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">RESULTS</span>
+    </div>
+  </div>
+
+  <!-- Container (RESULTS Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="results">
+    <h3 class="w3-center">RESULTS</h3>
+    <p class="w3-center"><em>Results</em></p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by Team Rainy Day</p>
+    <p>
+  </footer>
 
 
   <script>
-  function checkDay() {
-    var d = new Date();
-    if (d.getHours() < 11 && d.getHours() >= 0)
-    {
-      return "No one is having Happy Hour in Davis right now.";
-      //display list of happy hours
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
     }
-    else 
-    {
-      return "Here are the Happy Hours happening right now!" 
+    // Change style of navbar on scroll
+    window.onscroll = function() {
+      myFunction()
+    };
+    function myFunction() {
+      var navbar = document.getElementById("myNavbar");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+      } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+      }
     }
-  }
-  document.getElementById("demo").innerHTML = checkDay();
-
-  var myObj;
-  myObj = {
-    "bars": [
-  {
-    "Name": "Applebees",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$3.99 Brewtus (American Lager Drafts), $3.99 Long-Pour Wells, $3.99 Barefoot/Sutter home, $4.99 Brewtus (Craft Drafts), 1/2 price selected appetizers."
-  },
-  {
-    "Name": "Bistro 33 Davis",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "Appetizers and Flat breads half off. $5 well drinks, $5 beer, $2 off wine, discounts on certain cocktails/wines/specialty drinks."
-  },
-  {
-    "Name": "Blondies",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 16,
-    "start-min": 0,
-    "end": 19,
-    "time": "4pm - 7pm",
-    "specials": "Mysterious \"Great Deals"
-  },
-  {
-    "Name": "Burgers & Brew",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$1 off pints; $2 off pitchers, $5 house wine, $2-$7.50 happy hour burgers and bites."
-  },
-  {
-    "Name": "City Hall Tavern",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "Appetizers and Flat breads half off. $5 well drinks, $5 beer, $2 off wine, discounts on certain cocktails/wines/specialty drinks."
-  },
-  {
-    "Name": "Davis Beer Shoppe",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 0,
-    "Sat": 0,
-    "start": 11,
-    "start-min": 0,
-    "end": 16,
-    "time": "11am - 4 pm",
-    "specials": "$1 off draft beer."
-  },
-  {
-    "Name": "De Vere's Irish Pub",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$5-$8 small plates; $4 drafts, $6 craft cocktails and wine."
-  },
-  {
-    "Name": "Froggy's Grill",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 16,
-    "start-min": 0,
-    "end": 19,
-    "time": "4pm - 7pm",
-    "specials": "$1 off appetizers, beer & wine."
-  },
-  {
-    "Name": "G St Wunderbar",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 16,
-    "start-min": 0,
-    "end": 19,
-    "time": "4pm - 7pm",
-    "specials": "$1 off appetizers, beer & wine."
-  },
-  {
-    "Name": "The Graduate",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 17,
-    "time": "3pm - 5pm",
-    "specials": "$2 off singles; $4 off doubles; $2 off all pints; $3 off big beers; $6 off pitchers. %u2013 needs update"
-  },
-  {
-    "Name": "Kathmandu Kitchen",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$4 well drinks & margaritas; $3 draft beer; $2 off special cocktails; $3 appetizers."
-  },
-  {
-    "Name": "Ketmoree Thai Restaurant and Bar",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 16,
-    "start-min": 0,
-    "end": 18,
-    "time": "4pm - 6pm",
-    "specials": "$3 Beers + Wines + Cocktails, $5 Appetizers."
-  },
-  {
-    "Name": "Mikuni's",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 16,
-    "start-min": 30,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$4 draft beer, $7.50 sake; $5.50-$9 select wine; $6.50 specialty cocktails; happy hour %u201Cbites%u201D for $4-$11."
-  },
-  {
-    "Name": "Open Rice Kitchen",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 11,
-    "start-min": 0,
-    "end": 0,
-    "time": "11am - 12am",
-    "specials": "2 beers for $5, $5 daily specials (before midnight"
-  },
-  {
-    "Name": "Original Steve's",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 14,
-    "start-min": 0,
-    "end": 17,
-    "time": "2pm - 5 pm",
-    "specials": "$2 PBR; $4 craft beer; $3 appetizers; $4 house wine."
-  },
-  {
-    "Name": "Our House",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 16,
-    "start-min": 0,
-    "end": 18,
-    "time": "4pm - 6pm",
-    "specials": "$4 draft & bottled beer; $3 wells; $2 off specialty drinks; $5 appetizers & select wines."
-  },
-  {
-    "Name": "Paesanos",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$6 house cocktails/ appetizers, $5 draft beers/ well drinks, $4 house wine/ sangria."
-  },
-  {
-    "Name": "Red 88 Noodle Bar",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 17,
-    "start-min": 0,
-    "end": 19,
-    "time": "5pm - 7pm",
-    "specials": "$3-6 Bites & Drinks."
-  },
-  {
-    "Name": "Seasons",
-    "Sun": 0,
-    "Mon": 0,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 16,
-    "start-min": 0,
-    "end": 18,
-    "time": "4pm - 6pm",
-    "specials": "$3 draft beer, $5 wine, $5 seasonal cocktails, $5 small plates/appetizers, $11-$12 specialty cocktails."
-  },
-  {
-    "Name": "Taqueria El Burrito",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$3 all beer/seafood tostadas; $5.75 torta/nachos/carne asada fries/quesadilla; $7.95 select plates; $5 margaritas/micheladas."
-  },
-  {
-    "Name": "Tres Hermanas Davis",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$4.50 house margaritas; $4 house wine; $6 Loaded Corona; $5 RumChata; $3.50 draft Mexican beers;  $1.50 tacos with drink and discounts on appetizers."
-  },
-  {
-    "Name": "Thai Canteen",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$5 appetizers; $1 Thai iced tea; $1 off beer and wine."
-  },
-  {
-    "Name": "Uncle Vito's",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 16,
-    "start-min": 0,
-    "end": 18,
-    "time": "4pm - 6pm",
-    "specials": "$1 off all cocktails; $5 for a beer & a slice."
-  },
-  {
-    "Name": "University of Beer",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 12,
-    "start-min": 0,
-    "end": 17,
-    "time": "12pm - 5 pm",
-    "specials": "$1 off all drafts."
-  },
-  {
-    "Name": "Village Pizza & Grill",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 0,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$5-$5.50 draft beers; $1 off glass wine; $1 off appetizers."
-  },
-  {
-    "Name": "VINI",
-    "Sun": 0,
-    "Mon": 0,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 16,
-    "start-min": 0,
-    "end": 18,
-    "time": "4pm - 6pm",
-    "specials": "$1 off 2oz tastes; $2-$3 off glass of wine; $1 off beers."
-  },
-  {
-    "Name": "Wiki Bar",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$3.50 wells; $1 off house cocktails, 20oz draft beers, and wine by the glass; half off select bar bites."
-  },
-  {
-    "Name": "Woodstock's Pizza Davis",
-    "Sun": 0,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 0,
-    "start": 15,
-    "start-min": 0,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "$4 well drinks, $1 off beer & appetizers."
-  },
-  {
-    "Name": "3rd & U",
-    "Sun": 1,
-    "Mon": 1,
-    "Tues": 1,
-    "Wed": 1,
-    "Thurs": 1,
-    "Fri": 1,
-    "Sat": 1,
-    "start": 15,
-    "start-min": 30,
-    "end": 18,
-    "time": "3pm - 6pm",
-    "specials": "2 beers $5.25 all day; wings, sliders, pesto/garlic/buffalo fries & quesadillas $1-$3.25.  "
-  }
-]
-  }  
-
-
-$(document).ready(function(){
-   $("h3").hide();
-    $("#hide").click(function(){
-        $("h3").hide();
-    });
-    $("#show").click(function(){
-        $("h3").show();
-    });
-});
-
-  var d = new Date();
-  var i, x="", y="";
-  for (i in myObj.bars) {
-    if (myObj.bars[i].start <= d.getHours() && myObj.bars[i].end > d.getHours())
-    {
-      if (d.getDay() == 0)
-      {
-        if (myObj.bars[i].Sun == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
       }
-
-      if (d.getDay() == 1)
-      {
-        if (myObj.bars[i].Mon == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-
-      if (d.getDay() == 2)
-      {
-        if (myObj.bars[i].Tues == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-
-      if (d.getDay() == 3)
-      {
-        if (myObj.bars[i].Wed == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time + "</h2>" +
-          //y += "<h3>" + myObj.bars[i].specials + "</h3>";
-          "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-
-      if (d.getDay() == 4)
-      {
-        if (myObj.bars[i].Thurs == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-
-      if (d.getDay() == 5)
-      {
-        if (myObj.bars[i].Fri == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-
-      if (d.getDay() == 6)
-      {
-        if (myObj.bars[i].Sat == 1)
-        {
-          x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
-        } 
-      }
-      
     }
-  }
-  document.getElementById("demo2").innerHTML = x;
-
   </script>
-
-<!--   <script>
-  $(document).ready(function(){
-      $("p").click(function(){
-          $(this).hide();
-      });
-  });
-  </script> -->
-
-  <!-- img IDs --> 
-
-  <!-- First Photo Grid-->
-
-  <div class="w3-white w3-xlarge" style="max-width:1200px;margin-top:50px">
-    <div class="w3-center">Personal Favorites</div>
-  </div>
-
-  <div class="w3-row-padding w3-padding-16 w3-center" id="places">
-    <div class="w3-quarter">
-      <h3>Tres Hermanas Davis</h3>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BSdGZJ1FseV/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:62.48665955176094% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BSdGZJ1FseV/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">It was a margarita night!!!</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/dogojosho/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Joshua Garrett</a> (@dogojosho) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-04-04T07:15:11+00:00">Apr 4, 2017 at 12:15am PDT</time></p></div></blockquote> <script async defer src="https://platform.instagram.com/en_US/embeds.js"></script>
-    </div>
-    <div class="w3-quarter">
-      <h3>Paesanos</h3>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/BYhLi46nwUs/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/BYhLi46nwUs/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Yue Jia (@yuejiafoodie)</a> on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-09-02T00:25:31+00:00">Sep 1, 2017 at 5:25pm PDT</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
-    </div>
-    <div class="w3-quarter">
-      <h3>Red 88 Noodle Bar</h3>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BUDl--WgEv3/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BUDl--WgEv3/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Whoa!! $4 sake bombs all night long every Saturday @red88bar! Not a bad place to start the night in Davis! Tag a friend you&#39;d do a sake bomb with. #sakebombs #yourdavis #saturdaynight</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/your.davis/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Your Davis 🚴🏾‍♀️🍻🎭</a> (@your.davis) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-05-14T02:33:45+00:00">May 13, 2017 at 7:33pm PDT</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
-    </div>
-    <div class="w3-quarter">
-      <h3>Applebee's</h3>
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/BdIfp4cgj5K/" data-instgrm-version="8" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:658px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div> <p style=" margin:8px 0 0 0; padding:0 4px;"> <a href="https://www.instagram.com/p/BdIfp4cgj5K/" style=" color:#000; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none; word-wrap:break-word;" target="_blank">Server: What can I get you to drink? Me: Fa-la-la-la-la, la-la-la-lager.</a></p> <p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">A post shared by <a href="https://www.instagram.com/applebees/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px;" target="_blank"> Applebee&#39;s Grill &amp; Bar</a> (@applebees) on <time style=" font-family:Arial,sans-serif; font-size:14px; line-height:17px;" datetime="2017-12-25T16:57:12+00:00">Dec 25, 2017 at 8:57am PST</time></p></div></blockquote> <script async defer src="http://platform.instagram.com/en_US/embeds.js"></script>
-    </div>
-  </div>
-
-<!-- End page content -->
-</div>
-
 </body>
+
 </html>
