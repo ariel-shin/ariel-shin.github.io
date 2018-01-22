@@ -94,7 +94,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     "start-min": 0,
     "end": 19,
     "time": "4pm - 7pm",
-    "specials": "Mysterious \"Great Deals"
+    "specials": "Mysterious \"Great Deals\""
   },
   {
     "Name": "Burgers & Brew",
@@ -259,7 +259,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     "start-min": 0,
     "end": 24,
     "time": "11am - 12am",
-    "specials": "2 beers for $5, $5 daily specials (before midnight"
+    "specials": "2 beers for $5, $5 daily specials (before midnight)"
   },
   {
     "Name": "Original Steve's",
@@ -510,8 +510,8 @@ $(document).ready(function(){
         if (myObj.bars[i].Sun == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
 
@@ -520,8 +520,8 @@ $(document).ready(function(){
         if (myObj.bars[i].Mon == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
 
@@ -530,8 +530,8 @@ $(document).ready(function(){
         if (myObj.bars[i].Tues == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
 
@@ -541,7 +541,6 @@ $(document).ready(function(){
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
           myObj.bars[i].time + "</h2>" +
-          //y += "<h3>" + myObj.bars[i].specials + "</h3>";
           "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
@@ -551,8 +550,8 @@ $(document).ready(function(){
         if (myObj.bars[i].Thurs == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
 
@@ -561,8 +560,8 @@ $(document).ready(function(){
         if (myObj.bars[i].Fri == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
 
@@ -571,24 +570,18 @@ $(document).ready(function(){
         if (myObj.bars[i].Sat == 1)
         {
           x += "<h2>" + myObj.bars[i].Name + ": " + 
-          myObj.bars[i].time +"</h2>";
-          y += "<h3>" + myObj.bars[i].specials + "</h3>";
+          myObj.bars[i].time + "</h2>" +
+          "<h3>" + myObj.bars[i].specials + "</h3>";
         } 
       }
       
     }
   }
+
+  x+= "Provided by https://thedavisdirt.com/happy-hours/"
   document.getElementById("demo2").innerHTML = x;
 
   </script>
-
-<!--   <script>
-  $(document).ready(function(){
-      $("p").click(function(){
-          $(this).hide();
-      });
-  });
-  </script> -->
 
   <!-- img IDs --> 
 
